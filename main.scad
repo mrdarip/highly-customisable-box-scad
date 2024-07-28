@@ -9,8 +9,8 @@ design = [
     [1, 1, 1, 1, 1]
 ];
 
-wall_thickness = 1;
-outer_wall_thickness = 2;
+wall_thickness = 5;
+outer_wall_thickness = 1;
 bottom_thickness = 2;
 
 
@@ -19,8 +19,8 @@ total_width = 100;
 total_height = 100;
 total_depth = 10;
 
-inner_width = total_width - 2 * outer_wall_thickness;
-inner_height = total_height - 2 * outer_wall_thickness;
+inner_width = total_width + 2 * wall_thickness;
+inner_height = total_height + 2 * wall_thickness;
 final_outer_wall_thickness = outer_wall_thickness - wall_thickness;
 
 difference() {
@@ -31,7 +31,7 @@ difference() {
             translate([
                 final_outer_wall_thickness + (inner_width / columns) * column + wall_thickness,
                 final_outer_wall_thickness + (inner_height / rows) * row + wall_thickness,
-                bottom_thickness
+                bottom_thickness +1
                 ]) 
             cube(size = [(total_width / columns) - 2 * wall_thickness, (total_height / rows) - 2 * wall_thickness, total_depth - bottom_thickness]);
         }
