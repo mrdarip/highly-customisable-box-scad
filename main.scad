@@ -15,12 +15,12 @@ bottom_thickness = 2;
 
 
 
-width = 100;
-height = 100;
-depth = 10;
+total_width = 100;
+total_height = 100;
+total_depth = 10;
 
 intersection() {
-    cube(size = [width, height, depth]);
+    cube(size = [total_width, total_height, total_depth]);
 
     for(row = [0 : rows - 1]) {
         for(column = [0 : columns - 1]) {
