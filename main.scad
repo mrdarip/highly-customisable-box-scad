@@ -9,10 +9,20 @@ design = [
     [1, 1, 1, 1, 1]
 ];
 
+wall_thickness = 2;
+
 
 
 width = 100;
 height = 100;
-depth = 100;
+depth = 10;
 
-cube(size = [width, height, depth]);
+intersection() {
+    cube(size = [width, height, depth]);
+
+    for(row = [0 : rows - 1]) {
+        for(column = [0 : columns - 1]) {
+            cube();
+        }
+    }
+}
