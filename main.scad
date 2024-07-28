@@ -10,6 +10,8 @@ design = [
 ];
 
 wall_thickness = 2;
+outer_wall_thickness = 2;
+bottom_thickness = 2;
 
 
 
