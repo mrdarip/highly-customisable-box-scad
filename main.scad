@@ -2,7 +2,7 @@
  Parameters
 ====================*/
 
-design = [
+small_design = [
     [1,1,1,1,1,1],
     [1,2,2,2,1,1],
     [1,2,3,2,3,1],
@@ -41,7 +41,7 @@ scad_tolerance = 1;
 customizable_box();
 
 translate([150,0,0])
-customizable_box(design= design);
+customizable_box(design = small_design);
 
 translate([0,200,0])
 customizable_box(
