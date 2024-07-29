@@ -1,3 +1,7 @@
+/*====================
+ Parameters
+====================*/
+
 design = [
     [1,1,1,1],
     [1,3,3,1],
@@ -6,23 +10,23 @@ design = [
     [1,1,1,1]
 ];
 
-rows = len(design);
-columns = len(design[0]);
-
 wall_thickness = 1;
 outer_wall_thickness = 2;
 bottom_thickness = 2;
-
-
 
 total_width = 100;
 total_height = 100;
 total_depth = 10;
 
+/* ====================
+    Code
+====================*/
+
+rows = len(design);
+columns = len(design[0]);
+
 inner_width = total_width - 2 * outer_wall_thickness;
 inner_height = total_height - 2 * outer_wall_thickness;
-
-echo(inner_width);
 
 hole_width = (inner_width - (columns-1) * wall_thickness) / columns;
 hole_height = (inner_height- (rows-1) * wall_thickness) / rows;
