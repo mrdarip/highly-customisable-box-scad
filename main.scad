@@ -34,8 +34,8 @@ inner_height = total_height - 2 * outer_wall_thickness;
 hole_width = (inner_width - (columns-1) * wall_thickness) / columns;
 hole_height = (inner_height- (rows-1) * wall_thickness) / rows;
 
-//difference() {
-  //  cube(size = [total_width, total_height, total_depth]);
+difference() {
+    cube(size = [total_width, total_height, total_depth]);
 
     for(row = [0 : rows - 1]) {
         for(column = [0 : columns - 1]) {
@@ -51,7 +51,7 @@ hole_height = (inner_height- (rows-1) * wall_thickness) / rows;
                     translate([
                         0,
                         hole_height,
-                        -1 //remove
+                        0
                     ])
 
                     color("red") 
@@ -66,7 +66,7 @@ hole_height = (inner_height- (rows-1) * wall_thickness) / rows;
                     translate([
                         hole_width,
                         0,
-                        -1 //remove
+                        0
                     ])
 
                     color("red") 
@@ -93,5 +93,5 @@ hole_height = (inner_height- (rows-1) * wall_thickness) / rows;
                 }
             }
         }
-    //}
+    }
 }
