@@ -10,6 +10,20 @@ design = [
     [1,1,1,1,1,1],
 ];
 
+larger_design = [
+    [2,2,2,2,1,2],
+    [2,2,2,1,1,1],
+    [2,2,2,2,1,2],
+    [1,1,2,2,2,2],
+    [2,1,2,2,1,2],
+    [1,2,2,2,2,2],
+    [2,1,1,1,1,1],
+    [2,1,2,2,2,1],
+    [2,1,2,1,2,1],
+    [2,1,2,2,2,1],
+    [2,1,1,1,1,1]
+];
+
 wall_thickness = 2;
 outer_wall_thickness = 3;
 bottom_thickness = 4;
@@ -28,6 +42,15 @@ customizable_box();
 
 translate([150,0,0])
 customizable_box(design= design);
+
+translate([0,200,0])
+customizable_box(
+  design= larger_design,
+  wall_thickness = 1,
+  outer_wall_thickness=1,
+  bottom_thickness=1,
+  total_height=200
+);
 
 module customizable_box(
     design = [
