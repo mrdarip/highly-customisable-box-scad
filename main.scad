@@ -1,12 +1,12 @@
-rows = 10;
-columns = 1;
+rows = 5;
+columns = 4;
 
 design = [
-    [1],
-    [1],
-    [1],
-    [1],
-    [1]
+    [1,1,1,1],
+    [1,3,3,1],
+    [1,2,2,1],
+    [1,2,2,1],
+    [1,1,1,1]
 ];
 
 wall_thickness = 1;
@@ -51,6 +51,21 @@ hole_height = (inner_height- (rows-1) * wall_thickness) / rows;
                     cube([
                         hole_width,
                         wall_thickness,
+                        total_depth - bottom_thickness
+                    ]);
+                }
+
+                if(column < columns - 1){
+                    translate([
+                        hole_width,
+                        0,
+                        -1 //remove
+                    ])
+
+                    color("red") 
+                    cube([
+                        wall_thickness,
+                        hole_height,
                         total_depth - bottom_thickness
                     ]);
                 }
