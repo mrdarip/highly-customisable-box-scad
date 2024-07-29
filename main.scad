@@ -76,6 +76,21 @@ hole_height = (inner_height- (rows-1) * wall_thickness) / rows;
                         total_depth - bottom_thickness
                     ]);
                 }
+
+                if(row < rows - 1 && column < columns - 1 && design[row][column] == design[row+1][column] && design[row][column] == design[row][column+1] && design[row][column] == design[row+1][column+1]){
+                    translate([
+                        hole_width,
+                        hole_height,
+                        0
+                    ])
+
+                    color("red") 
+                    cube([
+                        wall_thickness,
+                        wall_thickness,
+                        total_depth - bottom_thickness
+                    ]);
+                }
             }
         }
     //}
