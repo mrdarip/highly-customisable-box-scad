@@ -14,8 +14,8 @@ design = [
 ];
 
 wall_thickness = 2;
-outer_wall_thickness = 2;
-bottom_thickness = 2;
+outer_wall_thickness = 3;
+bottom_thickness = 4;
 
 total_width = 100;
 total_height = 100;
@@ -24,6 +24,8 @@ total_depth = 10;
 /* ====================
     Code
 ====================*/
+
+scad_tolerance = 1;
 
 rows = len(design);
 columns = len(design[0]);
@@ -42,7 +44,7 @@ difference() {
             translate([
                 outer_wall_thickness + (hole_width + wall_thickness) * column, 
                 outer_wall_thickness + (hole_height + wall_thickness) * row,
-                bottom_thickness-5//remove
+                bottom_thickness
             ])
             {
                 union() {
@@ -51,26 +53,26 @@ difference() {
                     if(row < rows - 1 && design[row][column] == design[row+1][column]){
                         translate([
                             0,
-                            hole_height,
+                            hole_height - scad_tolerance/2,
                             0
                         ])
 
                         cube([
                             hole_width,
-                            wall_thickness,
+                            wall_thickness + scad_tolerance,
                             total_depth - bottom_thickness
                         ]);
                     }
 
                     if(column < columns - 1 && design[row][column] == design[row][column+1]){
                         translate([
-                            hole_width,
+                            hole_width- scad_tolerance/2,
                             0,
                             0
                         ])
 
                         cube([
-                            wall_thickness,
+                            wall_thickness+ scad_tolerance,
                             hole_height,
                             total_depth - bottom_thickness
                         ]);
@@ -78,14 +80,14 @@ difference() {
 
                     if(row < rows - 1 && column < columns - 1 && design[row][column] == design[row+1][column] && design[row][column] == design[row][column+1] && design[row][column] == design[row+1][column+1]){
                         translate([
-                            hole_width,
-                            hole_height,
+                            hole_width - scad_tolerance/2,
+                            hole_height - scad_tolerance/2,
                             0
                         ])
 
                         cube([
-                            wall_thickness,
-                            wall_thickness,
+                            wall_thickness+ scad_tolerance,
+                            wall_thickness+ scad_tolerance,
                             total_depth - bottom_thickness
                         ]);
                     }
