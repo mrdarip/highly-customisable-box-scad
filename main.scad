@@ -10,7 +10,7 @@ design = [
     [1,1,1,1]
 ];
 
-wall_thickness = 1;
+wall_thickness = 2;
 outer_wall_thickness = 2;
 bottom_thickness = 2;
 
@@ -44,7 +44,7 @@ hole_height = (inner_height- (rows-1) * wall_thickness) / rows;
             {
                 cube(size = [hole_width, hole_height, total_depth - bottom_thickness]);
 
-                if(row < rows - 1){
+                if(row < rows - 1 && design[row][column] == design[row+1][column]){
                     translate([
                         0,
                         hole_height,
@@ -59,7 +59,7 @@ hole_height = (inner_height- (rows-1) * wall_thickness) / rows;
                     ]);
                 }
 
-                if(column < columns - 1){
+                if(column < columns - 1 && design[row][column] == design[row][column+1]){
                     translate([
                         hole_width,
                         0,
