@@ -1,6 +1,3 @@
-rows = 5;
-columns = 4;
-
 design = [
     [1,1,1,1],
     [1,3,3,1],
@@ -8,6 +5,9 @@ design = [
     [1,2,2,1],
     [1,1,1,1]
 ];
+
+rows = len(design);
+columns = len(design[0]);
 
 wall_thickness = 1;
 outer_wall_thickness = 2;
