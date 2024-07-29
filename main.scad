@@ -26,6 +26,9 @@ scad_tolerance = 1;
 
 customizable_box();
 
+translate([150,0,0])
+customizable_box(design= design);
+
 module customizable_box(
     design = [
         [1,1,1,1,1],
