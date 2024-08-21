@@ -14,3 +14,5 @@ The features provided are
 ## Preview
 
 ![preview img](./preview.jpg)
+
+get a sample stl here: <https://github.com/mrdarip/highly-customisable-box-scad/blob/main/output.stl>
