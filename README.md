@@ -16,3 +16,5 @@ The features provided are
 ![preview img](./preview.jpg)
 
 get a sample stl here: <https://github.com/mrdarip/highly-customisable-box-scad/blob/main/output.stl>
+
+thingverse: <https://www.thingiverse.com/thing:6746260>
